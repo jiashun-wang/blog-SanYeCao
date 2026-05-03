@@ -1,0 +1,169 @@
+---
+import { getLangFromUrl, getTranslations } from "@/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
+---
+
+<nav class="site-nav" aria-label="Site navigation">
+    <div class="site-nav-desktop">
+        <a href={`/${lang}/`}>{t.nav.home}</a>
+        <a href={`/${lang}/about/`}>{t.nav.about}</a>
+        <a href={`/${lang}/tags/`}>{t.nav.tags}</a>
+        <a href={`/${lang}/timeline/`}>{t.nav.timeline}</a>
+        <a href={`/${lang}/friends/`}>{t.nav.friends}</a>
+    </div>
+
+    <details class="site-nav-mobile">
+        <summary>☰ {lang === "zh" ? "导航栏" : "Menu"}</summary>
+        <div class="dropdown-menu">
+            <a href={`/${lang}/`}>{t.nav.home}</a>
+            <a href={`/${lang}/about/`}>{t.nav.about}</a>
+            <a href={`/${lang}/tags/`}>{t.nav.tags}</a>
+            <a href={`/${lang}/timeline/`}>{t.nav.timeline}</a>
+            <a href={`/${lang}/friends/`}>{t.nav.friends}</a>
+        </div>
+    </details>
+</nav>
+
+<script>
+    document.addEventListener("click", (event) => {
+        const nav = document.querySelector(".site-nav-mobile");
+
+        if (!nav) return;
+
+        const target = event.target as Node;
+
+        if (!nav.contains(target)) {
+            nav.removeAttribute("open");
+        }
+    });
+</script>
+
+<style>
+    .site-nav {
+        margin: 1rem 0;
+        padding-bottom: 3rem;
+        position: relative;
+    }
+
+    .site-nav::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 12px;
+        background: repeating-linear-gradient(
+            -45deg,
+            var(--deep-red) 0 14px,
+            transparent 14px 28px,
+            var(--deep-blue) 28px 42px,
+            transparent 42px 56px
+        );
+        pointer-events: none;
+    }
+
+    :global(.dark) .site-nav::after {
+        background: repeating-linear-gradient(
+            -45deg,
+            #ff8a8a 0 14px,
+            transparent 14px 28px,
+            #9ecbff 28px 42px,
+            transparent 42px 56px
+        );
+    }
+
+    .site-nav-desktop {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .site-nav a {
+        color: black;
+        text-decoration: underline;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+
+    .site-nav a:hover {
+        text-decoration: underline;
+    }
+
+    :global(.dark) .site-nav a {
+        color: white;
+    }
+
+    :global(.dark) .site-nav a:hover {
+        color: #ddd;
+    }
+
+    .site-nav-mobile {
+        display: none;
+        position: relative;
+    }
+
+    .site-nav-mobile summary {
+        list-style: none;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: black;
+        text-decoration: underline;
+        user-select: none;
+    }
+
+    .site-nav-mobile summary::-webkit-details-marker {
+        display: none;
+    }
+
+    :global(.dark) .site-nav-mobile summary {
+        color: white;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 0.75rem);
+        left: 0;
+        min-width: 180px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.9rem 1rem;
+        background: #fffaf5;
+        border: 2px dashed #8b5e3c;
+        border-radius: 0;
+        z-index: 20;
+    }
+
+    .dropdown-menu a {
+        font-size: 1rem;
+        text-decoration: none;
+        color: black;
+    }
+
+    .dropdown-menu a:hover {
+        text-decoration: underline;
+    }
+
+    :global(.dark) .dropdown-menu {
+        background: #1f1b18;
+        border-color: #c8a98a;
+    }
+
+    :global(.dark) .dropdown-menu a {
+        color: white;
+    }
+
+    @media (max-width: 700px) {
+        .site-nav-desktop {
+            display: none;
+        }
+
+        .site-nav-mobile {
+            display: block;
+        }
+    }
+</style>

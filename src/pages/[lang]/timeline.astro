@@ -1,0 +1,19 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostTimeline from "@/components/Posts/PostTimeline.astro";
+import { getLangFromUrl, getTranslations } from "@/i18n";
+import "@/styles/global.css";
+
+export function getStaticPaths() {
+    return [{ params: { lang: "zh" } }, { params: { lang: "en" } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = getTranslations(lang);
+const headerTitle = lang === "zh" ? "时间轴" : "Timeline";
+---
+
+<BaseLayout pageTitle=`${headerTitle} - ${t.banner.title}` `>
+    <h1>{t.nav.timeline}</h1>
+    <PostTimeline />
+</BaseLayout>

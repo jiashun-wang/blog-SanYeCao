@@ -1,0 +1,91 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import PostItem from "@/components/Posts/PostItem.astro";
+import { getTranslations, type Lang } from "@/i18n";
+import "@/styles/global.css";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
+  const langs: Lang[] = ["zh", "en"];
+
+  return langs.flatMap((lang) =>
+    uniqueTags.map((tag) => {
+      const filteredPosts = allPosts.filter((post) =>
+        post.data.tags.includes(tag),
+      );
+
+      return {
+        params: { lang, tag },
+        props: { posts: filteredPosts, lang },
+      };
+    }),
+  );
+}
+
+const { tag } = Astro.params;
+const { posts, lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<BaseLayout pageTitle={String(tag)}>
+  <p class="tag-heading">
+    {lang === "zh" ? "带有标签" : "Posts tagged with"}{" "}
+    <span class="tag-chip" transition:name={`post-tags-${tag}`}>{tag}</span>
+    {lang === "zh" ? "的文章" : ""}
+  </p>
+  <ul>
+    {
+      posts.map((post: any) => {
+        const formattedDate = new Date(post.data.pubDate)
+          .toISOString()
+          .split("T")[0];
+
+        const [postLang, ...slugParts] = post.id.split("/");
+        const slug = slugParts.join("/");
+
+        return (
+          <PostItem
+            url={`/${lang}/posts/${slug}/`}
+            title={post.data.title}
+            date={formattedDate}
+            img={post.data.image.url}
+            tags={post.data.tags}
+            postId={post.id}
+          />
+        );
+      })
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .tag-heading {
+    margin: 0 0 1rem 0;
+  }
+
+  .tag-chip {
+    display: inline-block;
+    padding: 0.22em 0.65em;
+    font-size: 0.88rem;
+    line-height: 1.2;
+    border: 1px dashed #8b6b4a;
+    border-radius: 0;
+    background-color: transparent;
+    color: #6f4e37;
+    vertical-align: middle;
+  }
+
+  :global(.dark) .tag-chip {
+    border-color: #d8c7a1;
+    color: #e6d8b8;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 0;
+  }
+</style>

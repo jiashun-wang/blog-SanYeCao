@@ -1,0 +1,370 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Remark42Embed from "@/components/Remark42Embed.astro";
+import PostNav from "@/components/Posts/PostNav.astro";
+import PostMenu from "@/components/Posts/PostMenu.astro";
+import Dialog from "@/components/Posts/Dialog.astro";
+import { fade } from "astro:transitions";
+import { getTranslations } from "@/i18n";
+import "@/styles/global.css";
+
+const { post, frontmatter, lang, slug, postId, headings } = Astro.props;
+const comments = lang === "zh" ? "评论区" : "comments";
+const t = getTranslations(lang);
+---
+
+<BaseLayout
+  pageTitle=`${frontmatter.title} - ${t.banner.title}`
+  description={frontmatter.description}
+  image={frontmatter.image?.url}
+>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <a
+    href="/"
+    class="back-button"
+    id="back-button"
+    aria-label="Go back"
+    title="返回"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M15 18l-6-6 6-6"></path>
+    </svg>
+  </a>
+
+  <PostMenu headings={headings} />
+
+  <article class="post-article">
+    <div class="post-header">
+      <div class="post-meta">
+        <h1 class="post-title" transition:name={`post-title-${postId}`}>
+          {frontmatter.title}
+        </h1>
+        <p class="description">
+          <em>{frontmatter.description}</em>
+        </p>
+        <p class="meta-line">
+          {t.post.publishedOn}: {frontmatter.pubDate.toLocaleDateString()}
+        </p>
+        <p class="meta-line">{t.post.writtenBy}: {frontmatter.author}</p>
+
+        <div class="tags" transition:name={`post-tags-${postId}`}>
+          {
+            frontmatter.tags.map((tag: string) => (
+              <p class="tag">
+                <a href={`/${lang}/tags/${tag}`}>{tag}</a>
+              </p>
+            ))
+          }
+        </div>
+      </div>
+
+      <img
+        src={frontmatter.image.url}
+        alt={frontmatter.image.alt}
+        class="post-cover"
+        transition:name={`post-image-${postId}`}
+      />
+    </div>
+
+    <div class="post-divider"></div>
+
+    <div class="post-content" transition:animate={fade({ duration: "0.2s" })}>
+      <slot />
+    </div>
+
+    <Dialog />
+
+    <PostNav post={post} lang={lang} />
+
+    <h2>{comments}</h2>
+    <Remark42Embed slug={slug} />
+  </article>
+</BaseLayout>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: frontmatter.title,
+    description: frontmatter.description,
+    image: frontmatter.image
+      ? [
+          new URL(
+            frontmatter.image.url ?? frontmatter.image,
+            Astro.site,
+          ).toString(),
+        ]
+      : undefined,
+    datePublished: frontmatter.pubDate,
+    dateModified: frontmatter.updatedDate ?? frontmatter.pubDate,
+    author: {
+      "@type": "Person",
+      name: "CLoverta",
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": new URL(Astro.url.pathname, Astro.site).toString(),
+    },
+  })}
+/>
+
+<script>
+  const initFloatingActions = () => {
+    const backButton = document.getElementById("back-button");
+
+    if (backButton && backButton.dataset.bound !== "true") {
+      const toggleBackButton = () => {
+        if (window.scrollY > 300) {
+          backButton.classList.add("show");
+        } else {
+          backButton.classList.remove("show");
+        }
+      };
+
+      backButton.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "/";
+        }
+      });
+
+      window.addEventListener("scroll", toggleBackButton, {
+        passive: true,
+      });
+      toggleBackButton();
+      backButton.dataset.bound = "true";
+    }
+  };
+  const updateProgress = () => {
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop;
+    const scrollHeight = doc.scrollHeight - window.innerHeight;
+
+    const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+
+    const bar = document.getElementById("reading-progress");
+    if (bar) {
+      bar.style.width = `${Math.min(progress, 100)}%`;
+    }
+  };
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  initFloatingActions();
+  document.addEventListener("astro:page-load", initFloatingActions);
+</script>
+
+<style>
+  #reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 0;
+    height: 3px;
+    background: #5a89ff;
+    transition: width 0.08s linear;
+    pointer-events: none;
+  }
+
+  .back-button {
+    position: fixed;
+    top: 1.25rem;
+    left: 1.25rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: #536493 1.5px solid;
+    background: rgba(255, 255, 255, 0.92);
+    color: #222;
+    /* box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16); */
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    visibility: hidden;
+    transform: translateY(-80px);
+    /* opacity: 0; */
+    transition:
+      opacity 0.2s ease,
+      transform 0.27s ease,
+      visibility 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .back-button.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-button.show:hover {
+    transform: translateY(-2px);
+  }
+
+  .back-button:hover {
+    transform: translateY(-2px);
+  }
+
+  :global(.dark) .back-button {
+    background: rgba(34, 34, 34, 0.92);
+    color: #f5f5f5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.32);
+    border: #2f406d 2px solid;
+  }
+
+  @media (max-width: 640px) {
+    .back-button {
+      top: 1rem;
+      left: 1rem;
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  }
+  .post-content {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      "PingFang SC",
+      "Hiragino Sans GB",
+      "Microsoft YaHei",
+      "Noto Sans CJK SC",
+      "Source Han Sans SC",
+      sans-serif;
+    font-weight: 400;
+  }
+
+  .post-content :global(code),
+  .post-content :global(pre),
+  .post-content :global(kbd),
+  .post-content :global(samp) {
+    font-family: "Maple Mono", "Maple Mono CN", monospace;
+  }
+
+  a {
+    color: var(--post-link-color);
+  }
+
+  .post-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    align-items: start;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .post-meta {
+    min-width: 0;
+  }
+
+  .post-title {
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .description {
+    margin: 0 0 0.7rem 0;
+    opacity: 0.9;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .meta-line {
+    margin: 0.3rem 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .post-cover {
+    width: 300px;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: center;
+    /* border-radius: 0.4rem; */
+    border: 1.5px #94a0ab dashed;
+    display: block;
+  }
+
+  .post-divider {
+    border-top: 1px dashed #dfe4e9;
+    margin: 1.2rem 0 1.5rem;
+  }
+
+  :global(.dark) .post-divider {
+    border-top-color: #7f91a3;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+    min-width: 0;
+  }
+
+  .tag {
+    margin: 0;
+    padding: 0.22em 0.65em;
+    font-size: 0.88rem;
+    line-height: 1.2;
+    border: 1px dashed #8b6b4a;
+    border-radius: 0;
+    background-color: transparent;
+    max-width: 100%;
+  }
+
+  .tag a {
+    color: #6f4e37;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .tag a:hover {
+    text-decoration: underline;
+  }
+
+  :global(.dark) .tag {
+    border-color: #d8c7a1;
+  }
+
+  :global(.dark) .tag a {
+    color: #e6d8b8;
+  }
+
+  @media (max-width: 560px) {
+    .post-header {
+      grid-template-columns: 1fr;
+    }
+
+    .post-cover {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>

@@ -1,0 +1,164 @@
+@import url("https://unpkg.com/@fontsource/maple-mono@5.2.6/400.css");
+@import url("https://unpkg.com/@fontsource/maple-mono@5.2.6/400-italic.css");
+@import url("https://unpkg.com/@fontsource/maple-mono@5.2.6/700.css");
+@import "./latest-comments.css";
+@import "./variables.css";
+@import "./dialog.css";
+
+pre {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+code {
+  font-family: "Maple Mono", monospace;
+  font-size: 0.96rem;
+}
+
+/* 行内代码 */
+p code,
+li code,
+blockquote code,
+td code {
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  background: rgba(127, 127, 127, 0.12);
+}
+
+article svg.flowchart,
+article svg[class*="flowchart"],
+article svg[id^="mermaid-"] {
+  display: block;
+  margin: 1.5rem auto;
+}
+
+html {
+  /* font-family: "Maple Mono", "Maple Mono CN", monospace; */
+  font-family:
+    "Noto Serif SC",
+    "Source Han Serif SC",
+    "Songti SC",
+    "STSong",
+    "SimSun",
+    serif;
+  font-weight: 500;
+  /* background-color: #ffffff; */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+html {
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #828282 transparent;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 90ch;
+  padding: 1rem;
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  /* 按需调整大小 */
+  height: 400px;
+  /* 按需调整大小 */
+  background-image: url("https://files.seeusercontent.com/2026/04/16/1sXb/touhou___kirisame_marisa__2__by_.webp");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+
+}
+
+html.dark body::after {
+  background-image: url("https://files.seeusercontent.com/2026/03/30/vd8W/touhou___alice_margatroid_x_kiri.webp");
+}
+
+@media (max-width: 900px) {
+  body::after {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  code {
+    font-size: 0.92rem;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+
+a {
+  color: #3D74B6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+html.dark {
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+}
+
+.dark .menu {
+  background-color: #2a2a2a;
+  color: #e6e6e6;
+}
+
+.dark .nav-links a {
+  color: #9ecbff;
+  font-weight: 700;
+}
+
+.dark .nav-links a:hover,
+.dark .nav-links a:focus {
+  color: #c2deff;
+}
+
+.dark a {
+  color: #9ecbff;
+  font-weight: 700;
+}
+
+.dark a:hover,
+.dark a:focus {
+  color: #c2deff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
