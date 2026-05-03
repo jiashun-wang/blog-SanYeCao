@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://blog.cloverta.top
+      #url: https://blog.cloverta.top
 
     env:
       DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
