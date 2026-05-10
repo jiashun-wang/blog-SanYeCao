@@ -1,13 +1,13 @@
 ---
 title: 科研GOCO 模式
-description: testts
+description: GOCO模式是美国科研体系中一种非常典型的管理模式
 pubDate: 2025-08-18
-
-author: 'Astro Learner'
+author: Astro Learner
 image:
-    url: 'https://cdn.chum-bucket.site/image/20260511-015329-554.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro", "blogging", "learning in public", "Hello"]
+  url: https://cdn.chum-bucket.site/image/20260511-015329-554.webp
+  alt: The Astro logo on a dark background with a pink glow.
+tags:
+  - 科技管理
 ---
 **FFRDC**
 
