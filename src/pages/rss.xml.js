@@ -6,7 +6,7 @@ export async function GET(context) {
     const posts = await getCollection("blog");
 
     return rss({
-        title: "Jiashun Wang's Blog",
+        title: "Oceanology notes",
         description: "Thoughts, tutorials, and projects by Jiashun Wang.",
         site: context.site,
         items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),

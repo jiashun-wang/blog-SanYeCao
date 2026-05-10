@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blog.cloverta.top/sitemap-index.xml
+Sitemap: https://blog.chum-bucket.site/sitemap-index.xml
