@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css";
-import Remark42Counter from "@/components/Remark42Counter.astro";
+
 import { getLangFromUrl } from "@/i18n";
 
 const lang = getLangFromUrl(Astro.url);
@@ -31,11 +31,6 @@ const tags = data.tags;
 
       <div class="post-meta-row">
         <span class="post-date">{data.date}</span>
-        <span class="post-stats">
-          <span class="post-stat">
-            💬 <Remark42Counter url={data.postPath} />
-          </span>
-        </span>
       </div>
     </div>
 
