@@ -2,18 +2,13 @@
 title: 科研GOCO 模式
 description: testts
 pubDate: 2025-08-18
-tags:
-  - test
-  - "666"
-categories:
-  - hhc
-keywords: test,666
-image: '{"url":"https://s2.loli.net/2022/05/01/UNzy8c6pTHBSuMO.jpg","alt":"The Astro logo on a dark background with a pink glow."}'
-author: Astro Learner
+
+author: 'Astro Learner'
+image:
+    url: 'https://s2.loli.net/2022/05/01/UNzy8c6pTHBSuMO.jpg'
+    alt: 'The Astro logo on a dark background with a pink glow.'
+tags: ["astro", "blogging", "learning in public", "Hello"]
 ---
-
-
-
 **FFRDC**
 
 像 **Caltech 代管 JPL** 这样的关系，在美国科研体系中是一种非常典型的 **管理模式**，学名叫 **GOCO（Government-Owned, Contractor-Operated）**  ：
@@ -55,6 +50,6 @@ author: Astro Learner
 
 ---
 
-📌 总结：  
-**Caltech 代管 JPL 就是典型的 GOCO 模式。**   
+📌 总结：
+**Caltech 代管 JPL 就是典型的 GOCO 模式。**
 这是一种既保证政府掌控（特别是战略方向、核能、航天等领域），又保留学术机构灵活性和创新力的管理体制。
