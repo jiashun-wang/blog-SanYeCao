@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/2026-05-11-0218.md",
+                "file": "src/blog/zh/post-3.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-05-11-0218"
+              "title": "post-3"
             }
           }
         ]
@@ -186,13 +186,13 @@
   },
   "active": "91e96d0c6735b914",
   "lastOpenFiles": [
-    "src/blog/zh/post-3.md",
-    "src/blog/zh/2026-05-11.md",
     "src/blog/zh/2026-05-11-0218.md",
-    "src/blog/zh/2026-05-11-0214.md",
+    "src/blog/zh/2026-05-11.md",
     "template/diary.md",
     "template/template.md",
     "template/Timestamp.md",
+    "src/blog/zh/post-3.md",
+    "src/blog/zh/2026-05-11-0214.md",
     "src/blog/en/2026-05-11.md",
     "src/blog/zh/2026-05-11-0217.md",
     "src/blog/zh/2026-05-11-0204.md",
