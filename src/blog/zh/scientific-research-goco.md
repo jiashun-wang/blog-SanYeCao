@@ -17,6 +17,7 @@ tags: ["astro", "blogging", "learning in public", "Hello"]
 
 像 **Caltech 代管 JPL** 这样的关系，在美国科研体系中是一种非常典型的 **管理模式**，学名叫 **GOCO（Government-Owned, Contractor-Operated）**  ：
 
+
 ---
 
 ## 🔹 什么是 GOCO 模式？
