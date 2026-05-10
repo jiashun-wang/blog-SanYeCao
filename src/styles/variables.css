@@ -1,9 +1,11 @@
 :root {
     --deep-blue: #536493;
     --deep-red: #ef5a6f;
-    --background-color: #f9f2ed;
+    /* --background-color: #f9f2ed; */
+    --background-color: #fafafa;
     --text-color: #0E2F56;
 
     --background-color-dark: #1e1e1e;
+    /* --background-color-dark: #1b2838; */
     --text-color-dark: #e6e6e6;
 }
