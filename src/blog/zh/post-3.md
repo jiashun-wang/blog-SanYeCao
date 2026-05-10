@@ -5,15 +5,11 @@ pubDate: 2025-08-18
 
 author: 'Astro Learner'
 image:
-    url: 'https://s2.loli.net/2022/05/01/UNzy8c6pTHBSuMO.jpg'
+    url: 'https://cdn.chum-bucket.site/image/20260511-015329-554.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public", "Hello"]
 ---
 **FFRDC**
-
-像 **Caltech 代管 JPL** 这样的关系，在美国科研体系中是一种非常典型的 **管理模式**，学名叫 **GOCO（Government-Owned, Contractor-Operated）**  ：
-
-‍
 
 像 **Caltech 代管 JPL** 这样的关系，在美国科研体系中是一种非常典型的 **管理模式**，学名叫 **GOCO（Government-Owned, Contractor-Operated）**  ：
 

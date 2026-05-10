@@ -18,6 +18,11 @@
         }
       ],
       "title": "博客"
+    },
+    {
+      "type": "folder",
+      "ctime": 1778435866562,
+      "path": "template"
     }
   ]
 }

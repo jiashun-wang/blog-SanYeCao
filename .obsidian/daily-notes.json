@@ -1,0 +1,5 @@
+{
+  "template": "template/template",
+  "folder": "src/blog/zh",
+  "format": "YYYY-MM-DD"
+}

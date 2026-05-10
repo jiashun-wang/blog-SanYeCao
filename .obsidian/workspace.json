@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "b6a8e75676008170",
+        "id": "c48e30b8ae7aaedc",
         "type": "tabs",
         "children": [
           {
-            "id": "e12b7462445093d7",
+            "id": "b817cb668a1c3870",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/未命名.md",
-                "mode": "preview",
+                "file": "src/blog/zh/post-3.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "post-3"
             }
           }
         ]
@@ -52,16 +52,6 @@
             }
           },
           {
-            "id": "8eab9328ea1dacf5",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "书签"
-            }
-          },
-          {
             "id": "99c6ccef2bde1a00",
             "type": "leaf",
             "state": {
@@ -73,13 +63,23 @@
               "icon": "lucide-folder-closed",
               "title": "文件列表"
             }
+          },
+          {
+            "id": "8eab9328ea1dacf5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 266.5
   },
   "right": {
     "id": "3f674ee545f96e5e",
@@ -177,17 +177,30 @@
     "hiddenItems": {
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "workspaces:管理工作区布局": false
+      "zk-prefixer:创建时间戳笔记": false,
+      "daily-notes:打开/创建今天的日记": false
     }
   },
-  "active": "e12b7462445093d7",
+  "active": "b817cb668a1c3870",
   "lastOpenFiles": [
+    "src/blog/zh/2026-05-11.md",
+    "src/blog/zh/2026-05-11-0123.md",
     "template/template.md",
+    "template/Timestamp.md",
+    "template/diary.md",
+    "public/images/banner-black.svg",
+    "src/blog/zh/post-3.md",
+    "src/blog/zh/post-2.md",
+    "未命名.base",
+    "src/blog/zh/2026-05-11-0113.md",
+    "src/blog/zh/2026-05-11-0124.md",
+    "src/blog/zh/2026-05-11-0125.md",
+    "src/blog/zh/2026-05-11-0122.md",
+    "src/blog/zh/2026-05-11-.md",
+    "未命名.md",
     "src/blog/zh/未命名.md",
     "template/post-2.md",
     "template/post-3.md",

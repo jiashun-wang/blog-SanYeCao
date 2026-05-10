@@ -4,7 +4,7 @@ pubDate: {{date}}
 description: 'This is the first post of my new Astro blog.'
 author: 'Jiashun Wang'
 image:
-    url: 'https://cdn.chum-bucket.site/image/20260511-015410-146.webp'
+    url: 'https://cdn.chum-bucket.site/image/20260511-015410-147.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging"]
 ---
