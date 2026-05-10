@@ -74,7 +74,7 @@ body::after {
   /* 按需调整大小 */
   height: 400px;
   /* 按需调整大小 */
-  background-image: url("https://files.seeusercontent.com/2026/04/16/1sXb/touhou___kirisame_marisa__2__by_.webp");
+  /* background-image: url("https://files.seeusercontent.com/2026/04/16/1sXb/touhou___kirisame_marisa__2__by_.webp"); */
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
@@ -84,9 +84,10 @@ body::after {
 
 }
 
-html.dark body::after {
+
+/* html.dark body::after {
   background-image: url("https://files.seeusercontent.com/2026/03/30/vd8W/touhou___alice_margatroid_x_kiri.webp");
-}
+} */
 
 @media (max-width: 900px) {
   body::after {
