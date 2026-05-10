@@ -7,8 +7,7 @@ image:
   url: https://cdn.chum-bucket.site/image/20260511-015415-050.webp
   alt: The Astro logo on a dark background with a pink glow.
 tags:
-  - astro
-  - blogging
+  - timestamp
 ---
 
 # 一级标题
