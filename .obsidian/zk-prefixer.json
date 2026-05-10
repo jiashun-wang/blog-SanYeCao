@@ -1,5 +1,5 @@
 {
   "folder": "src/blog/zh",
-  "template": "template/template",
+  "template": "template/Timestamp",
   "format": "YYYY-MM-DD-hhmm"
 }

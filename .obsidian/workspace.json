@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/post-3.md",
+                "file": "template/template.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "post-3"
+              "title": "template"
             }
           }
         ]
@@ -186,14 +186,16 @@
   },
   "active": "b817cb668a1c3870",
   "lastOpenFiles": [
-    "src/blog/zh/2026-05-11.md",
-    "src/blog/zh/2026-05-11-0123.md",
-    "template/template.md",
     "template/Timestamp.md",
+    "template/template.md",
     "template/diary.md",
-    "public/images/banner-black.svg",
-    "src/blog/zh/post-3.md",
+    "src/blog/zh/2026-05-11-0204.md",
+    "src/blog/zh/2026-05-11.md",
     "src/blog/zh/post-2.md",
+    "src/blog/zh/2026-05-11-0203.md",
+    "src/blog/zh/2026-05-11-0123.md",
+    "src/blog/zh/post-3.md",
+    "public/images/banner-black.svg",
     "未命名.base",
     "src/blog/zh/2026-05-11-0113.md",
     "src/blog/zh/2026-05-11-0124.md",
@@ -212,7 +214,6 @@
     "template/Blog-en/post-1.md",
     "template/Blog/post-3.md",
     "template/Blog/post-2.md",
-    "template/Blog/post-1.md",
     "template/Blog-en",
     "template/Blog",
     "template"
