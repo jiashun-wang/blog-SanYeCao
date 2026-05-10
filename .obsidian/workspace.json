@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "60169e7bb1bb4665",
+        "id": "551b59161bc24376",
         "type": "tabs",
         "children": [
           {
-            "id": "16e858c4fea3c4e7",
+            "id": "91e96d0c6735b914",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/2026-05-11-0214.md",
+                "file": "src/blog/zh/2026-05-11-0218.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "2026-05-11-0214"
+              "title": "2026-05-11-0218"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/blog/zh/scientific-research-goco.md",
+                "file": "src/blog/zh/2026-05-11-0218.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "scientific-research-goco 的反向链接列表"
+              "title": "2026-05-11-0218 的反向链接列表"
             }
           },
           {
@@ -184,18 +184,21 @@
       "daily-notes:打开/创建今天的日记": false
     }
   },
-  "active": "16e858c4fea3c4e7",
+  "active": "91e96d0c6735b914",
   "lastOpenFiles": [
-    "template/Timestamp.md",
-    "src/blog/zh/2026-05-11-0214.md",
-    "src/blog/zh/2026-05-11-0204.md",
-    "src/blog/zh/2026-05-11.md",
     "src/blog/zh/post-3.md",
+    "src/blog/zh/2026-05-11.md",
+    "src/blog/zh/2026-05-11-0218.md",
+    "src/blog/zh/2026-05-11-0214.md",
+    "template/diary.md",
+    "template/template.md",
+    "template/Timestamp.md",
+    "src/blog/en/2026-05-11.md",
+    "src/blog/zh/2026-05-11-0217.md",
+    "src/blog/zh/2026-05-11-0204.md",
     "src/blog/zh/post-2.md",
     "README.md",
     "README-en.md",
-    "template/template.md",
-    "template/diary.md",
     "src/blog/zh/2026-05-11-0203.md",
     "src/blog/zh/2026-05-11-0123.md",
     "public/images/banner-black.svg",
@@ -211,9 +214,6 @@
     "template/post-3.md",
     "template/post-1.md",
     "src/blog/zh/scientific-research-goco.md",
-    "template/post-1 copy.md",
-    "template/Blog-en/post-3.md",
-    "template/Blog-en/post-2.md",
     "template/Blog-en",
     "template/Blog",
     "template"

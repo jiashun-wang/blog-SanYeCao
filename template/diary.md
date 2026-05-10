@@ -1,7 +1,6 @@
 ---
 title: Diary
-pubDate:
-  "{ date }":
+pubDate:{{date}}
 description: This is the first post of my new Astro blog.
 author: Jiashun Wang
 image:
