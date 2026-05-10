@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
-import Remark42Embed from "@/components/Remark42Embed.astro";
+
 import PostNav from "@/components/Posts/PostNav.astro";
 import PostMenu from "@/components/Posts/PostMenu.astro";
 import Dialog from "@/components/Posts/Dialog.astro";
@@ -86,8 +86,7 @@ const t = getTranslations(lang);
 
     <PostNav post={post} lang={lang} />
 
-    <h2>{comments}</h2>
-    <Remark42Embed slug={slug} />
+
   </article>
 </BaseLayout>
 
