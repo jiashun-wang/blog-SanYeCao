@@ -9,7 +9,7 @@ import { getTranslations } from "@/i18n";
 import "@/styles/global.css";
 
 const { post, frontmatter, lang, slug, postId, headings } = Astro.props;
-const comments = lang === "zh" ? "评论区" : "comments";
+
 const t = getTranslations(lang);
 ---
 
