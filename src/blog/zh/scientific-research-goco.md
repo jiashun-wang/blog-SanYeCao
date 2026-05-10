@@ -1,13 +1,15 @@
 ---
 title: 科研GOCO 模式
 description: testts
-pubDate: '2025-08-18'
+pubDate: 2025-08-18
 tags:
   - test
-  - '666'
+  - "666"
 categories:
   - hhc
 keywords: test,666
+image: '{"url":"https://s2.loli.net/2022/05/01/UNzy8c6pTHBSuMO.jpg","alt":"The Astro logo on a dark background with a pink glow."}'
+author: Astro Learner
 ---
 
 
