@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/scientific-research-goco.md",
-                "mode": "source",
-                "source": false
+                "file": "src/blog/zh/未命名.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "scientific-research-goco"
+              "title": "未命名"
             }
           }
         ]
@@ -34,19 +34,6 @@
         "id": "62c9b21e64ea7a04",
         "type": "tabs",
         "children": [
-          {
-            "id": "f713abc2792c629c",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
-              },
-              "icon": "lucide-folder-closed",
-              "title": "文件列表"
-            }
-          },
           {
             "id": "30ef09a323db1ed9",
             "type": "leaf",
@@ -73,8 +60,22 @@
               "icon": "lucide-bookmark",
               "title": "书签"
             }
+          },
+          {
+            "id": "99c6ccef2bde1a00",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -180,11 +181,19 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "workspaces:管理工作区布局": false
     }
   },
   "active": "e12b7462445093d7",
   "lastOpenFiles": [
+    "template/template.md",
+    "src/blog/zh/未命名.md",
+    "template/post-2.md",
+    "template/post-3.md",
+    "template/post-1.md",
+    "src/blog/zh/scientific-research-goco.md",
+    "template/post-1 copy.md",
     "template/Blog-en/post-3.md",
     "template/Blog-en/post-2.md",
     "template/Blog-en/post-1.md",
@@ -193,7 +202,6 @@
     "template/Blog/post-1.md",
     "template/Blog-en",
     "template/Blog",
-    "template",
-    "src/blog/zh/scientific-research-goco.md"
+    "template"
   ]
 }
