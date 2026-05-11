@@ -7,87 +7,123 @@ const t = getTranslations(lang);
 ---
 
 <footer class="footer">
-  <a
-    href="https://github.com/jiashun-wang/blog-SanYeCao"
-    class="github"
-    aria-label="GitHub repository"></a>
-  <a href="mailto:wjs@ieee.org" class="email" aria-label="Email"></a>
-  <p class="footer-content-pc">
-    © 2026 Jiashun Wang · <a
-      href="https://github.com/jiashun-wang/blog-SanYeCao"
-      >Source code</a
-    > licensed under MIT. Content rights reserved.
-    <!-- <code class="build-commit">{commit.slice(0, 7)}</code> -->
-  </p>
+  <!-- 顶部装饰线 -->
+  <div class="footer-top-border"></div>
+  
+  <!-- 社交链接 -->
+  <div class="social-links">
+    <a
+      href="https://github.com/jiashun-wang"
+      class="github"
+      aria-label="GitHub repository"></a>
+    <a href="mailto:wjs@ieee.org" class="email" aria-label="Email"></a>
+  </div>
 
-  <div class="footer-content-mobile">
-    <p>© 2026 Jiashun Wang</p>
-    <p>Content rights reserved.</p>
+<!-- PC端内容 -->
+<div class="footer-content-pc">
+  <p class="site-info">
+    本站由 
+    <a href="https://jia-shun.wang" class="author-link" target="_blank" rel="noopener noreferrer nofollow">Jiashun Wang</a> 
+    基于 
+    <a href="https://github.com/ClovertaTheTrilobita/SanYeCao-blog" class="project-link" target="_blank" rel="noopener noreferrer nofollow">
+      SanYeCao-blog
+    </a> 
+    项目创建。
+    <!-- <br>
+    This site is created by 
+    <a href="https://jia-shun.wang" class="author-link" target="_blank" rel="noopener noreferrer nofollow">Jiashun Wang</a> 
+    using the 
+    <a href="https://github.com/ClovertaTheTrilobita/SanYeCao-blog" class="project-link" target="_blank" rel="noopener noreferrer nofollow">
+      SanYeCao-blog
+    </a> 
+    project. -->
+  </p>
+  <p class="license-info">
+    本站所有文章除特别声明外，均采用
+    <a 
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/" 
+      target="_blank" 
+      rel="noopener noreferrer nofollow"
+      class="license-link">
+      CC BY-NC-SA 4.0
+    </a>
+    许可协议，转载请注明出处。
+    <!-- <br>
+    All articles on this site, unless otherwise stated, are licensed under the
+    <a 
+      href="https://creativecommons.org/licenses/by-nc-sa/4.0/" 
+      target="_blank" 
+      rel="noopener noreferrer nofollow"
+      class="license-link">
+      CC BY-NC-SA 4.0
+    </a>
+    license. Please indicate the source when reprinting. -->
+  </p>
+</div>
+
+<!-- 移动端内容 -->
+<div class="footer-content-mobile">
+  <p>
+    Created by <a href="https://jia-shun.wang" class="author-link">Jiashun Wang</a>
+  </p>
+  <p>
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="license-link">CC BY-NC-SA 4.0</a> Licensed
+  </p>
+</div>
+  
+
+  <!-- 备案信息（放在最下面） -->
+  <div class="beian-info">
+    <a
+      href="https://beian.miit.gov.cn/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="beian-link">
+      苏ICP备2023101667号
+    </a>
+    <span class="separator">|</span>
+    <a
+      href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32128102010336"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="beian-link">
+      <img
+        src="/police-icon.png"
+        alt="公安备案图标"
+        class="police-icon"
+        loading="lazy"
+      />
+      苏公网安备 32128102010336号
+    </a>
   </div>
 
   <BuildHashBlocks />
 </footer>
 
 <style>
-  .github {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #1f2328;
-    -webkit-mask: url("/images/github-outline-7.svg") no-repeat center / contain;
-    mask: url("/images/github-outline-7.svg") no-repeat center / contain;
-    vertical-align: middle;
-    margin-bottom: 0.5rem;
-    margin-right: 0.5rem;
-    transition:
-      transform 0.18s ease,
-      opacity 0.18s ease;
-  }
-
-  .email {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #1f2328;
-    -webkit-mask: url("/images/email.svg") no-repeat center / contain;
-    mask: url("/images/email.svg") no-repeat center / contain;
-    vertical-align: middle;
-    margin-bottom: 0.5rem;
-    transition:
-      transform 0.18s ease,
-      opacity 0.18s ease;
-  }
-
-  .github:hover {
-    transform: translateY(-2px);
-  }
-  .email:hover {
-    transform: translateY(-2px);
-  }
-
-  :global(html.dark .github) {
-    background-color: #e6e6e6;
-  }
-
-  :global(html.dark .email) {
-    background-color: #e6e6e6;
-  }
-
+  /* 基础样式 */
   .footer {
-    margin-top: 1rem;
-    padding: 1.5rem 0 0;
+    margin-top: 2rem;
+    padding: 2rem 1rem 1.5rem;
     font-size: 0.95rem;
-    opacity: 0.9;
     position: relative;
     text-align: center;
+    background: var(--footer-bg, #f9f9f9);
+    border-top: 1px solid var(--border-color, #eaeaea);
   }
 
-  .footer::before {
+  :global(.dark) .footer {
+    background: var(--footer-bg-dark, #1a1a1a);
+    border-top-color: var(--border-color-dark, #333);
+  }
+
+  /* 顶部装饰线 */
+  .footer-top-border {
     content: "";
     display: block;
     width: 100%;
     height: 12px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     background: repeating-linear-gradient(
       -45deg,
       var(--deep-red) 0 14px,
@@ -98,17 +134,7 @@ const t = getTranslations(lang);
     pointer-events: none;
   }
 
-  .footer-content-mobile {
-    display: none;
-  }
-
-  .footer p {
-    margin: 0.4rem 0;
-    font-size: 0.8rem;
-    /* display: inline-flex; */
-  }
-
-  :global(.dark) .footer::before {
+  :global(.dark) .footer-top-border {
     background: repeating-linear-gradient(
       -45deg,
       #ff8a8a 0 14px,
@@ -118,13 +144,214 @@ const t = getTranslations(lang);
     );
   }
 
+  /* 社交链接 */
+  .social-links {
+    margin-bottom: 1.5rem;
+  }
+
+  .github, .email {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: var(--icon-color, #1f2328);
+    -webkit-mask: url("/images/github-outline-7.svg") no-repeat center / contain;
+    mask: url("/images/github-outline-7.svg") no-repeat center / contain;
+    vertical-align: middle;
+    margin: 0 0.75rem;
+    transition: all 0.2s ease;
+  }
+
+  .email {
+    -webkit-mask: url("/images/email.svg") no-repeat center / contain;
+    mask: url("/images/email.svg") no-repeat center / contain;
+  }
+
+  .github:hover, .email:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+  }
+
+  :global(.dark) .github,
+  :global(.dark) .email {
+    background-color: var(--icon-color-dark, #e6e6e6);
+  }
+
+  /* 版权信息 */
+  .footer-content-pc,
+  .footer-content-mobile {
+    color: var(--text-color, #666);
+  }
+
+  :global(.dark) .footer-content-pc,
+  :global(.dark) .footer-content-mobile {
+    color: var(--text-color-dark, #aaa);
+  }
+
+  .copyright-info {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .source-link {
+    color: var(--link-color, #2563eb);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .source-link:hover {
+    color: var(--link-hover-color, #1d4ed8);
+    text-decoration: underline;
+  }
+
+  :global(.dark) .source-link {
+    color: var(--link-color-dark, #60a5fa);
+  }
+
+  :global(.dark) .source-link:hover {
+    color: var(--link-hover-color-dark, #93c5fd);
+  }
+
+  /* 备案信息 - 放在最下面，无背景色 */
+  .beian-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light, #eee);
+    font-size: 0.85rem;
+    color: var(--beian-color, #666);
+  }
+
+  :global(.dark) .beian-info {
+    border-top-color: var(--border-light-dark, #444);
+    color: var(--beian-color-dark, #aaa);
+  }
+
+  .beian-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .beian-link:hover {
+    color: var(--beian-hover-color, #333);
+    text-decoration: underline;
+  }
+
+  :global(.dark) .beian-link:hover {
+    color: var(--beian-hover-color-dark, #fff);
+  }
+
+  /* 警徽图标 - 保持原色，调整大小 */
+  .police-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+    object-fit: contain;
+    /* 移除所有滤镜，保持原色 */
+  }
+
+  /* 分隔符 */
+  .separator {
+    color: var(--separator-color, #ccc);
+    margin: 0 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  :global(.dark) .separator {
+    color: var(--separator-color-dark, #555);
+  }
+
+  /* 移动端样式 */
+  .footer-content-mobile {
+    display: none;
+  }
+
+  /* 响应式设计 */
   @media (max-width: 700px) {
+    .footer {
+      padding: 1.5rem 1rem 1rem;
+    }
+
     .footer-content-pc {
       display: none;
     }
 
     .footer-content-mobile {
       display: block;
+    }
+
+    .footer-content-mobile p {
+      margin: 0.5rem 0;
+      font-size: 0.85rem;
+    }
+
+    .github, .email {
+      width: 28px;
+      height: 28px;
+      margin: 0 0.5rem;
+    }
+
+    .footer-top-border {
+      height: 8px;
+      margin-bottom: 1rem;
+    }
+
+    /* 移动端备案信息 */
+    .beian-info {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* 移动端警徽图标 */
+    .police-icon {
+      width: 12px;
+      height: 12px;
+      margin-right: 3px;
+    }
+
+    /* 移动端分隔符隐藏，垂直排列 */
+    @media (max-width: 480px) {
+      .beian-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .separator {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      padding: 1rem 0.75rem;
+    }
+
+    .beian-info {
+      font-size: 0.75rem;
+    }
+
+    .police-icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  /* 超小屏幕优化 */
+  @media (max-width: 360px) {
+    .beian-info {
+      font-size: 0.7rem;
+    }
+    
+    .police-icon {
+      width: 10px;
+      height: 10px;
     }
   }
 </style>
