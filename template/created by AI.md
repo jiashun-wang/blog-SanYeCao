@@ -1,6 +1,6 @@
 ---
 title: created by AI
-pubDate: 2026-05-11
+pubDate: {{date}}
 description: This is the first post of my new Astro blog.
 author: Jiashun Wang
 image:
