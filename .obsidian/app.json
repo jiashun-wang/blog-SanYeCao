@@ -1,3 +1,20 @@
 {
-  "promptDelete": false
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "assets/",
+    "docs/",
+    "dist/",
+    "node_modules/",
+    "public/",
+    "template/",
+    "src/assets/",
+    "src/components/",
+    "src/friends/",
+    "src/i18n/",
+    "src/layouts/",
+    "src/pages/",
+    "src/scripts/",
+    "src/styles/",
+    "README"
+  ]
 }

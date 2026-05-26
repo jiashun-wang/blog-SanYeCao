@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e8df223c53b0c90d",
+        "id": "9a1d083332c3bf10",
         "type": "tabs",
         "children": [
           {
-            "id": "44daebade2c3337e",
+            "id": "55b652195549d1ac",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/blog/zh/2026-05-12.md",
+                "file": "draft/2026-05-25.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-12"
+              "title": "2026-05-25"
             }
           }
         ]
@@ -33,24 +33,8 @@
       {
         "id": "62c9b21e64ea7a04",
         "type": "tabs",
+        "dimension": 70.89262613195343,
         "children": [
-          {
-            "id": "30ef09a323db1ed9",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "tag:-- English-learning",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "搜索"
-            }
-          },
           {
             "id": "99c6ccef2bde1a00",
             "type": "leaf",
@@ -65,6 +49,45 @@
             }
           },
           {
+            "id": "30ef09a323db1ed9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#notes",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          }
+        ]
+      },
+      {
+        "id": "075ac50c51ccc0af",
+        "type": "tabs",
+        "dimension": 29.107373868046572,
+        "children": [
+          {
+            "id": "da5ca840ebe8aabf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "draft/2026-05-25.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026-05-25 的大纲"
+            }
+          },
+          {
             "id": "8eab9328ea1dacf5",
             "type": "leaf",
             "state": {
@@ -74,12 +97,11 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 225.5
   },
   "right": {
     "id": "3f674ee545f96e5e",
@@ -88,7 +110,55 @@
       {
         "id": "2c10ff866f9889e7",
         "type": "tabs",
+        "dimension": 55.6701030927835,
         "children": [
+          {
+            "id": "bcf707db3a40abe8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3e9417c552652934",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "28defbb23527db3d",
+        "type": "tabs",
+        "dimension": 44.3298969072165,
+        "children": [
+          {
+            "id": "edbc78f2b203499d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          },
           {
             "id": "c0cd253109d1a31d",
             "type": "leaf",
@@ -123,58 +193,24 @@
             }
           },
           {
-            "id": "bcf707db3a40abe8",
+            "id": "e408d0eb38174fd3",
             "type": "leaf",
             "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-tags",
-              "title": "标签"
-            }
-          },
-          {
-            "id": "3e9417c552652934",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "添加笔记属性"
-            }
-          },
-          {
-            "id": "da5ca840ebe8aabf",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "src/blog/zh/2026-05-12.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-list",
-              "title": "2026-05-12 的大纲"
+              "type": "footnotes",
+              "state": {},
+              "icon": "lucide-file-signature",
+              "title": "脚注"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 202.5
   },
   "left-ribbon": {
     "hiddenItems": {
+      "workspaces:管理工作区布局": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "templates:插入模板": false,
@@ -185,14 +221,19 @@
       "pkmer:Open Pkmer Market": false
     }
   },
-  "active": "44daebade2c3337e",
+  "active": "99c6ccef2bde1a00",
   "lastOpenFiles": [
-    "src/blog/zh/2026-05-11-0218.md",
+    "draft",
     "src/blog/zh/post-3.md",
+    "draft/2026-05-25.md",
+    "src/blog/zh/2026-05-16.md",
     "src/blog/zh/2026-05-12.md",
+    "src/friends/example.md",
+    "src/blog/zh/2026-05-11-0218.md",
+    "template/notes.md",
+    "node_modules/playwright-core/lib/tools/cli-client/skill/SKILL.md",
     "template/created by AI.md",
     "template/diary.md",
-    "template/notes.md",
     "template/template.md",
     "template/Timestamp.md",
     "src/blog/zh/2026-05-11.md",
@@ -211,11 +252,6 @@
     "未命名.base",
     "src/blog/zh/2026-05-11-0113.md",
     "src/blog/zh/2026-05-11-0124.md",
-    "src/blog/zh/2026-05-11-0125.md",
-    "src/blog/zh/2026-05-11-0122.md",
-    "src/blog/zh/2026-05-11-.md",
-    "未命名.md",
-    "src/blog/zh/未命名.md",
     "template/Blog-en",
     "template/Blog",
     "template"

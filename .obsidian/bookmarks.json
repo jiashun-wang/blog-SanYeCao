@@ -15,6 +15,12 @@
           "ctime": 1778431226197,
           "path": "src/blog/en",
           "title": "英文博客"
+        },
+        {
+          "type": "file",
+          "ctime": 1779689532007,
+          "path": "draft/2026-05-25.md",
+          "title": "SWAN"
         }
       ],
       "title": "博客"
