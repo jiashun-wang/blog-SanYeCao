@@ -9,7 +9,7 @@ import { getTranslations } from "@/i18n";
 import "@/styles/global.css";
 
 const { post, frontmatter, lang, slug, postId, headings } = Astro.props;
-const comments = lang === "zh" ? "评论区" : "comments";
+// const comments = lang === "zh" ? "评论区" : "comments";
 const t = getTranslations(lang);
 ---
 
@@ -86,9 +86,9 @@ const t = getTranslations(lang);
 
     <PostNav post={post} lang={lang} />
 
-    <h2>{comments}</h2>
+    <!-- <h2>{comments}</h2>
     {t.post.commentsDesc.map((line: string) => <p set:html={line} />)}
-    <Remark42Embed slug={slug} />
+    <Remark42Embed slug={slug} /> -->
   </article>
 </BaseLayout>
 
