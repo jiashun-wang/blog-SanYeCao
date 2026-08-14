@@ -10,10 +10,30 @@ media_folder: /public/media
 public_folder: /media
 
 collections:
-  - name: blog
-    label: 博客
-    label_singular: blog
+  - name: blog-zh
+    label: 中文博客
+    label_singular: blog-zh
     folder: /src/blog/zh
+    create: true
+    delete: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: pubDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Description, name: description, widget: text }
+      - { label: Author, name: author, widget: string }
+      - label: Image
+        name: image
+        widget: object
+        fields:
+          - { label: URL, name: url, widget: string }
+          - { label: Alt Text, name: alt, widget: string }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+      - { label: Body, name: body, widget: markdown }
+
+  - name: blog-en
+    label: blog
+    label_singular: blog-en
+    folder: /src/blog/en
     create: true
     delete: true
     fields:
