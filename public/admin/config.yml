@@ -4,7 +4,7 @@ backend:
   name: github
   repo: jiashun-wang/blog-SanYeCao
   branch: master
-  base_url: sveltia-cms-auth.1043210554.workers.dev # URL of your OAuth client
+  base_url: https://sveltia-cms-auth.1043210554.workers.dev # URL of your OAuth client
 
 media_folder: /public/media
 public_folder: /media
