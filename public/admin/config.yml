@@ -24,7 +24,7 @@ collections:
   - name: blog-zh
     label: 中文博客
     label_singular: blog-zh
-    icon: "Language Pinyin"
+    icon: "language_pinyin"
     folder: /src/blog/zh
     create: true
     delete: true
@@ -56,7 +56,7 @@ collections:
     label: blog
     label_singular: blog-en
     folder: /src/blog/en
-    icon: "Match Case"
+    icon: "Match_Case"
     create: true
     delete: true
     fields:
