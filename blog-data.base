@@ -1,0 +1,16 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.folder == "src/blog/zh"
+    order:
+      - file.name
+      - title
+      - author
+      - description
+      - pubDate
+      - tags
+      - image
+    columnSize:
+      note.title: 139

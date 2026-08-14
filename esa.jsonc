@@ -1,0 +1,7 @@
+{
+  "name": "Astro-SanYeCao",
+  "assets": {
+    "directory": "./dist",
+    "notFoundStrategy": "404Page"
+  }
+}
