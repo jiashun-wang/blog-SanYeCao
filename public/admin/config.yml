@@ -9,9 +9,9 @@ public_folder: /media
 
 collections:
   - name: blog
-    label: Blogs
-    label_singular: Blog
-    folder: /src/blog/zh
+    label: blog posts
+    label_singular: blog
+    folder: /src/blog
     create: true
     delete: true
     fields:
@@ -27,3 +27,27 @@ collections:
           - { label: Alt Text, name: alt, widget: string }
       - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
       - { label: Body, name: body, widget: markdown }
+
+
+# Media provider features
+media_libraries:
+  # default:
+  #   config:
+  #     max_file_size: 1024000 # default: Infinity
+  #     slugify_filename: true # default: false
+  #     transformations: # See the documentation for details
+
+  cloudflare_r2:
+    access_key_id: 852bd16c78142bd7dbf82ea2a9e7a2ee
+    bucket: figures
+    account_id: 6739ed328656ada25d8eb1c4c033da5b
+    public_url: https://figures.de5.net
+    prefix: images/ # Optional
+    jurisdiction: default # Optional; 'default' | 'eu' | 'fedramp'
+
+  cloudinary:
+    config:
+      cloud_name: dbxprwscm
+      api_key: 329376394623687
+    output_filename_only: false
+    use_transformations: true
