@@ -9,7 +9,7 @@ public_folder: /media
 
 collections:
   - name: blog
-    label: blog posts
+    label: 博客
     label_singular: blog
     folder: /src/blog
     create: true
