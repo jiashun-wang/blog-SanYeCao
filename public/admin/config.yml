@@ -81,26 +81,14 @@ collections:
     label: 友链
     label_singular: Friends
     folder: /src/friends
+    icon: Group
     create: true
     delete: true
     fields:
       - { label: 名称, name: name, widget: string }
       - { label: 描述, name: description, widget: text }
       - { label: 网址, name: url, widget: string }
-      - { label: 头像, name: avatar, widget: image, allow_multiple: false }
-
-  - divider: true
-
-  - name: i18n
-    label: 语言设置
-    files:
-      - name: zh
-        label: 中文语言设置
-        file: /src/i18n/zh.ts
-      - name: en
-        label: English Language Settings
-        file: /src/i18n/en.ts
-
+      - { label: 头像, name: avatar, widget: image }
 
 
 # Media provider features
