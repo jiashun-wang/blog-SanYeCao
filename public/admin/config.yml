@@ -51,6 +51,7 @@ collections:
       - { label: Body, name: body, widget: markdown }
 
 
+
 # Media provider features
 media_libraries:
   # default:
