@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: jiashun-wang/blog-SanYeCao
+
+media_folder: /public/media
+public_folder: /media
+
+collections:
+  - name: blog
+    label: Blogs
+    label_singular: Blog
+    folder: /src/blog/zh
+    create: true
+    delete: true
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: pubDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Description, name: description, widget: text }
+      - { label: Author, name: author, widget: string }
+      - label: Image
+        name: image
+        widget: object
+        fields:
+          - { label: URL, name: url, widget: string }
+          - { label: Alt Text, name: alt, widget: string }
+      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
+      - { label: Body, name: body, widget: markdown }
