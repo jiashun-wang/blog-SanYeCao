@@ -3,37 +3,60 @@
 backend:
   name: github
   repo: jiashun-wang/blog-SanYeCao
+  auth_methods: [oauth]
   branch: master
   base_url: https://sveltia-cms-auth.1043210554.workers.dev # URL of your OAuth client
 
-media_folder: /public/media
-public_folder: /media
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+    openAuthoring: '{{message}}'
+
+media_folder: /public/images
+public_folder: /images
+
+
 
 collections:
   - name: blog-zh
     label: 中文博客
     label_singular: blog-zh
+    icon: Language Pinyin
     folder: /src/blog/zh
     create: true
     delete: true
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Publish Date, name: pubDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: Description, name: description, widget: text }
-      - { label: Author, name: author, widget: string }
-      - label: Image
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: pubDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: 描述, name: description, widget: text }
+      - { label: 作者, name: author, widget: string }
+      - label: 图片
         name: image
         widget: object
         fields:
-          - { label: URL, name: url, widget: string }
-          - { label: Alt Text, name: alt, widget: string }
-      - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
-      - { label: Body, name: body, widget: markdown }
+          - { label: 链接, name: url, widget: string }
+          - { label: 替代文本, name: alt, widget: string }
+      - { label: 标签, name: tags, widget: list, field: { label: 标签, name: tag, widget: string } }
+      - { label: 正文, name: body, widget: markdown }
+    sortable_fields: [pubDate, title]
+    # view_groups:
+    #   - field: draft
+    #   - label: Drafts
+    #     field: date
+    #     label: Year
+    #     pattern: '\d{4}'
+
+
+  - divider: true
 
   - name: blog-en
     label: blog
     label_singular: blog-en
     folder: /src/blog/en
+    icon: Match Case
     create: true
     delete: true
     fields:
@@ -49,16 +72,44 @@ collections:
           - { label: Alt Text, name: alt, widget: string }
       - { label: Tags, name: tags, widget: list, field: { label: Tag, name: tag, widget: string } }
       - { label: Body, name: body, widget: markdown }
+    sortable_fields: [pubDate, title]
+
+  - divider: true
+
+  # File Collection for Static Pages
+  - name: friends
+    label: 友链
+    label_singular: Friends
+    folder: /src/friends
+    create: true
+    delete: true
+    fields:
+      - { label: 名称, name: name, widget: string }
+      - { label: 描述, name: description, widget: text }
+      - { label: 网址, name: url, widget: string }
+      - { label: 头像, name: avatar, widget: image, allow_multiple: false }
+
+  - divider: true
+
+  - name: i18n
+    label: 语言设置
+    files:
+      - name: zh
+        label: 中文语言设置
+        file: /src/i18n/zh.ts
+      - name: en
+        label: English Language Settings
+        file: /src/i18n/en.ts
 
 
 
 # Media provider features
 media_libraries:
-  # default:
-  #   config:
-  #     max_file_size: 1024000 # default: Infinity
-  #     slugify_filename: true # default: false
-  #     transformations: # See the documentation for details
+  default:
+    config:
+      max_file_size: 4096000 # default: Infinity
+      slugify_filename: true # default: false
+      transformations: # See the documentation for details
 
   cloudflare_r2:
     access_key_id: 852bd16c78142bd7dbf82ea2a9e7a2ee
