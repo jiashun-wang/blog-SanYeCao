@@ -16,7 +16,7 @@ export default defineConfig({
       },
     },
   },
-  site: "https://blog.chum-bucket.site",
+  site: "https://blog.jia-shun.wang",
   redirects: {
     "/": "/zh",
   },
